@@ -1,0 +1,28 @@
+- name: Install Neovim on Debian-based systems
+  ansible.builtin.apt:
+    name: neovim
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: Install Neovim on macOS
+  community.general.homebrew:
+    name: neovim
+    state: present
+  when: ansible_os_family == "Darwin"
+
+- name: Clone the Neovim config
+  ansible.builtin.git:
+    repo: "{{ neovim_config_repo }}"
+    dest: "{{ neovim_config_dir }}"
+    clone: yes
+    update: yes
+
+- name: Debug message for Neovim installation on macOS
+  ansible.builtin.debug:
+    msg: "Neovim installed on {{ ansible_os_family }}"
+  when: ansible_os_family == "Darwin"
+
+- name: Debug message for Neovim installation on Debian-based systems
+  ansible.builtin.debug:
+    msg: "Neovim installed on {{ ansible_os_family }}"
+  when: ansible_os_family == "Debian"

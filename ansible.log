@@ -41,3 +41,164 @@
 2024-05-18 12:44:56,091 p=52203 u=root n=ansible | skipping: [localhost]
 2024-05-18 12:44:56,123 p=52203 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
 2024-05-18 12:44:56,123 p=52203 u=root n=ansible | localhost                  : ok=4    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2024-05-18 21:21:37,756 p=83713 u=root n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/vinayak/ansible_config/roles/setup/tasks/neovim.yml': line 21, column 16, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      git:
+        repo: {{ neovim_config_repo }}
+               ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2024-05-18 21:22:36,316 p=83981 u=root n=ansible | ERROR! conflicting action statements: hosts, gather_facts
+
+The error appears to be in '/home/vinayak/ansible_config/roles/setup/tasks/neovim.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Install Neovim
+  ^ here
+
+2024-05-18 21:23:07,058 p=84169 u=root n=ansible | ERROR! conflicting action statements: hosts, tasks
+
+The error appears to be in '/home/vinayak/ansible_config/roles/setup/tasks/neovim.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Install Neovim
+  ^ here
+
+2024-05-18 21:26:58,156 p=84586 u=root n=ansible | ERROR! conflicting action statements: hosts, gather_facts
+
+The error appears to be in '/home/vinayak/ansible_config/roles/setup/tasks/neovim.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Install Neovim
+  ^ here
+
+2024-05-18 21:27:57,267 p=84867 u=root n=ansible | ERROR! unexpected parameter type in action: <class 'ansible.parsing.yaml.objects.AnsibleSequence'>
+
+The error appears to be in '/home/vinayak/ansible_config/roles/setup/tasks/neovim.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Install Neovim
+  ^ here
+
+2024-05-18 21:33:54,601 p=91766 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 21:33:54,611 p=91766 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 21:33:55,672 p=91766 u=root n=ansible | ok: [localhost]
+2024-05-18 21:33:55,706 p=91766 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 21:33:57,005 p=91766 u=root n=ansible | ok: [localhost]
+2024-05-18 21:33:57,014 p=91766 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 21:33:57,026 p=91766 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:33:57,042 p=91766 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 21:33:57,056 p=91766 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:33:57,070 p=91766 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 21:33:59,915 p=91766 u=root n=ansible | changed: [localhost]
+2024-05-18 21:33:59,923 p=91766 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 21:33:59,938 p=91766 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 21:33:59,946 p=91766 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 21:33:59,956 p=91766 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:33:59,964 p=91766 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 21:33:59,974 p=91766 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:34:00,003 p=91766 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 21:34:00,016 p=91766 u=root n=ansible | ok: [localhost]
+2024-05-18 21:34:00,025 p=91766 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 21:34:01,253 p=91766 u=root n=ansible | ok: [localhost]
+2024-05-18 21:34:01,261 p=91766 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 21:34:01,271 p=91766 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:34:01,279 p=91766 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 21:34:04,023 p=91766 u=root n=ansible | ERROR! The requested handler 'Reload neovim' was not found in either the main handlers list nor in the listening handlers list
+2024-05-18 21:37:07,064 p=94349 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 21:37:07,071 p=94349 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 21:37:07,840 p=94349 u=root n=ansible | ok: [localhost]
+2024-05-18 21:37:07,861 p=94349 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 21:37:08,828 p=94349 u=root n=ansible | ok: [localhost]
+2024-05-18 21:37:08,856 p=94349 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 21:37:08,865 p=94349 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:37:08,873 p=94349 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 21:37:08,883 p=94349 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:37:08,893 p=94349 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 21:37:11,940 p=94349 u=root n=ansible | changed: [localhost]
+2024-05-18 21:37:11,948 p=94349 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 21:37:11,961 p=94349 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 21:37:11,969 p=94349 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 21:37:11,979 p=94349 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:37:11,987 p=94349 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 21:37:11,996 p=94349 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:37:12,012 p=94349 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 21:37:12,024 p=94349 u=root n=ansible | ok: [localhost]
+2024-05-18 21:37:12,031 p=94349 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 21:37:12,815 p=94349 u=root n=ansible | ok: [localhost]
+2024-05-18 21:37:12,823 p=94349 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 21:37:12,832 p=94349 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:37:12,846 p=94349 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 21:37:13,120 p=94349 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (ansible.builtin.git) module: creates. Supported parameters include: accept_hostkey, accept_newhostkey, archive, archive_prefix, bare, clone, depth, dest, executable, force, gpg_whitelist, key_file, recursive, reference, refspec, remote, repo, separate_git_dir, single_branch, ssh_opts, track_submodules, umask, update, verify_commit, version (name)."}
+2024-05-18 21:37:13,121 p=94349 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 21:37:13,121 p=94349 u=root n=ansible | localhost                  : ok=6    changed=1    unreachable=0    failed=1    skipped=5    rescued=0    ignored=0   
+2024-05-18 21:40:25,519 p=97027 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 21:40:25,527 p=97027 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 21:40:26,488 p=97027 u=root n=ansible | ok: [localhost]
+2024-05-18 21:40:26,518 p=97027 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 21:40:27,538 p=97027 u=root n=ansible | ok: [localhost]
+2024-05-18 21:40:27,545 p=97027 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 21:40:27,555 p=97027 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:40:27,563 p=97027 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 21:40:27,572 p=97027 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:40:27,581 p=97027 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 21:40:31,612 p=97027 u=root n=ansible | changed: [localhost]
+2024-05-18 21:40:31,620 p=97027 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 21:40:31,633 p=97027 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 21:40:31,641 p=97027 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 21:40:31,651 p=97027 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:40:31,660 p=97027 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 21:40:31,669 p=97027 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:40:31,684 p=97027 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 21:40:31,699 p=97027 u=root n=ansible | ok: [localhost]
+2024-05-18 21:40:31,707 p=97027 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 21:40:32,569 p=97027 u=root n=ansible | ok: [localhost]
+2024-05-18 21:40:32,577 p=97027 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 21:40:32,587 p=97027 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:40:32,597 p=97027 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 21:40:33,527 p=97027 u=root n=ansible | ok: [localhost]
+2024-05-18 21:40:33,536 p=97027 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 21:40:33,546 p=97027 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:40:33,554 p=97027 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 21:40:33,567 p=97027 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 21:40:33,624 p=97027 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 21:40:33,624 p=97027 u=root n=ansible | localhost                  : ok=8    changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
