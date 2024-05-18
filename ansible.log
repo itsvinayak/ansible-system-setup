@@ -1,0 +1,43 @@
+2024-05-18 12:44:37,942 p=51022 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 12:44:38,074 p=51022 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 12:44:38,082 p=51022 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 12:44:38,862 p=51022 u=root n=ansible | ok: [localhost]
+2024-05-18 12:44:38,884 p=51022 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 12:44:39,685 p=51022 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716016458, "cache_updated": false, "changed": false}
+2024-05-18 12:44:39,691 p=51022 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 12:44:39,703 p=51022 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 12:44:39,715 p=51022 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 12:44:39,736 p=51022 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 12:44:39,774 p=51022 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 12:44:42,417 p=51022 u=root n=ansible | changed: [localhost] => {"cache_update_time": 1716016482, "cache_updated": true, "changed": true}
+2024-05-18 12:44:42,424 p=51022 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 12:44:42,437 p=51022 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 12:44:42,444 p=51022 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 12:44:42,453 p=51022 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 12:44:42,461 p=51022 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 12:44:42,472 p=51022 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 12:44:42,503 p=51022 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 12:44:42,504 p=51022 u=root n=ansible | localhost                  : ok=4    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2024-05-18 12:44:52,025 p=52203 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 12:44:52,031 p=52203 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 12:44:52,801 p=52203 u=root n=ansible | ok: [localhost]
+2024-05-18 12:44:52,821 p=52203 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 12:44:53,629 p=52203 u=root n=ansible | ok: [localhost]
+2024-05-18 12:44:53,636 p=52203 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 12:44:53,645 p=52203 u=root n=ansible | skipping: [localhost]
+2024-05-18 12:44:53,675 p=52203 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 12:44:53,686 p=52203 u=root n=ansible | skipping: [localhost]
+2024-05-18 12:44:53,692 p=52203 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 12:44:56,029 p=52203 u=root n=ansible | changed: [localhost]
+2024-05-18 12:44:56,035 p=52203 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 12:44:56,050 p=52203 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 12:44:56,057 p=52203 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 12:44:56,073 p=52203 u=root n=ansible | skipping: [localhost]
+2024-05-18 12:44:56,083 p=52203 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 12:44:56,091 p=52203 u=root n=ansible | skipping: [localhost]
+2024-05-18 12:44:56,123 p=52203 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 12:44:56,123 p=52203 u=root n=ansible | localhost                  : ok=4    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   

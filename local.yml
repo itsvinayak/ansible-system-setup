@@ -1,0 +1,9 @@
+- name: Configure local machine
+  hosts: all 
+  become: yes
+  gather_facts: yes
+  connection: local
+
+  roles:
+    - pre_task
+  

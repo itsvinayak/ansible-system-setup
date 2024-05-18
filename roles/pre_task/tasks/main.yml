@@ -1,0 +1,38 @@
+-  block:
+    - name: Install aptitude on Debian-based systems
+      ansible.builtin.apt:
+        name: aptitude
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install or update Homebrew on macOS
+      community.general.homebrew:
+        name: update_homebrew
+        state: present
+      when: ansible_os_family == "Darwin"
+
+    - name: Debug message for Homebrew installation
+      debug:
+        msg: "Homebrew installed on {{ ansible_os_family }}"
+      when: ansible_os_family == "Darwin"
+
+    - name: Update APT cache on Debian-based systems
+      ansible.builtin.apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Debug message for APT cache update
+      debug:
+        msg: "APT cache updated on {{ ansible_os_family }}"
+      when: ansible_os_family == "Debian"
+
+    - name: Update Homebrew on macOS
+      community.general.homebrew:
+        update_homebrew: yes
+      when: ansible_os_family == "Darwin"
+
+    - name: Debug message for Homebrew update
+      debug:
+        msg: "Homebrew updated on {{ ansible_os_family }}"
+      when: ansible_os_family == "Darwin"
+
