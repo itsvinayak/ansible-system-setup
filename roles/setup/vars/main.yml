@@ -1,4 +1,3 @@
-neovim_install: true
-neovim_config_repo: https://github.com/itsvinayak/TurboNvimConfig.nvim.git
-neovim_config_dir: ~/.config/nvim
+neovim_config_repo: "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+neovim_config_dir: "/home/vinayak/.config/nvim"
 

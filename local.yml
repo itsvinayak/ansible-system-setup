@@ -4,6 +4,9 @@
   gather_facts: yes
   connection: local
 
+  vars:
+    local_user: vinayak
+
   roles:
     - pre_task
     - setup

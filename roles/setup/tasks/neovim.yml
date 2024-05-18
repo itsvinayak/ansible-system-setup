@@ -1,3 +1,7 @@
+- name: checking Var require in scripts
+  ansible.builtin.debug:
+    msg: "Neovim configuration directory: {{ neovim_config_dir }} , Neovim config url: {{ neovim_config_repo }}"
+  
 - name: Install Neovim on Debian-based systems
   ansible.builtin.apt:
     name: neovim
@@ -10,12 +14,23 @@
     state: present
   when: ansible_os_family == "Darwin"
 
+- name: Ensure Neovim configuration directory exists
+  ansible.builtin.file:
+    path: "{{ neovim_config_dir }}"
+    owner: "{{ local_user }}"
+    group: "{{ local_user }}"
+    state: directory
+
 - name: Clone the Neovim config
   ansible.builtin.git:
     repo: "{{ neovim_config_repo }}"
     dest: "{{ neovim_config_dir }}"
+    accept_hostkey: yes
     clone: yes
     update: yes
+    force: yes
+  become_user: "{{ local_user }}"
+
 
 - name: Debug message for Neovim installation on macOS
   ansible.builtin.debug:

@@ -202,3 +202,752 @@ The offending line appears to be:
 }
 2024-05-18 21:40:33,624 p=97027 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
 2024-05-18 21:40:33,624 p=97027 u=root n=ansible | localhost                  : ok=8    changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 21:50:06,549 p=99834 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 21:50:06,561 p=99834 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 21:50:07,539 p=99834 u=root n=ansible | ok: [localhost]
+2024-05-18 21:50:07,561 p=99834 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 21:50:08,599 p=99834 u=root n=ansible | ok: [localhost]
+2024-05-18 21:50:08,609 p=99834 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 21:50:08,622 p=99834 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:50:08,632 p=99834 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 21:50:08,645 p=99834 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:50:08,656 p=99834 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 21:50:14,332 p=99834 u=root n=ansible | changed: [localhost]
+2024-05-18 21:50:14,342 p=99834 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 21:50:14,360 p=99834 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 21:50:14,370 p=99834 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 21:50:14,381 p=99834 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:50:14,390 p=99834 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 21:50:14,401 p=99834 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:50:14,420 p=99834 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 21:50:14,432 p=99834 u=root n=ansible | ok: [localhost]
+2024-05-18 21:50:14,443 p=99834 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 21:50:15,388 p=99834 u=root n=ansible | ok: [localhost]
+2024-05-18 21:50:15,396 p=99834 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 21:50:15,408 p=99834 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:50:15,416 p=99834 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 21:50:16,424 p=99834 u=root n=ansible | ok: [localhost]
+2024-05-18 21:50:16,431 p=99834 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 21:50:16,444 p=99834 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:50:16,454 p=99834 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 21:50:16,467 p=99834 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 21:50:16,506 p=99834 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 21:50:16,507 p=99834 u=root n=ansible | localhost                  : ok=8    changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 21:53:53,370 p=101496 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 21:53:53,380 p=101496 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 21:53:54,331 p=101496 u=root n=ansible | ok: [localhost]
+2024-05-18 21:53:54,353 p=101496 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 21:53:55,391 p=101496 u=root n=ansible | ok: [localhost]
+2024-05-18 21:53:55,399 p=101496 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 21:53:55,412 p=101496 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:53:55,420 p=101496 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 21:53:55,434 p=101496 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:53:55,445 p=101496 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 21:53:57,822 p=101496 u=root n=ansible | changed: [localhost]
+2024-05-18 21:53:57,830 p=101496 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 21:53:57,846 p=101496 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 21:53:57,855 p=101496 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 21:53:57,866 p=101496 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:53:57,877 p=101496 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 21:53:57,888 p=101496 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:53:57,906 p=101496 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 21:53:57,917 p=101496 u=root n=ansible | ok: [localhost]
+2024-05-18 21:53:57,927 p=101496 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 21:53:58,796 p=101496 u=root n=ansible | ok: [localhost]
+2024-05-18 21:53:58,803 p=101496 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 21:53:58,816 p=101496 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:53:58,826 p=101496 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 21:53:59,824 p=101496 u=root n=ansible | ok: [localhost]
+2024-05-18 21:53:59,831 p=101496 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 21:53:59,844 p=101496 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:53:59,851 p=101496 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 21:53:59,869 p=101496 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 21:53:59,909 p=101496 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 21:53:59,909 p=101496 u=root n=ansible | localhost                  : ok=8    changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 21:56:48,652 p=102964 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 21:56:48,660 p=102964 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 21:56:49,705 p=102964 u=root n=ansible | ok: [localhost]
+2024-05-18 21:56:49,726 p=102964 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 21:56:50,790 p=102964 u=root n=ansible | ok: [localhost]
+2024-05-18 21:56:50,797 p=102964 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 21:56:50,812 p=102964 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:56:50,824 p=102964 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 21:56:50,835 p=102964 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:56:50,843 p=102964 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 21:56:54,361 p=102964 u=root n=ansible | changed: [localhost]
+2024-05-18 21:56:54,370 p=102964 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 21:56:54,386 p=102964 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 21:56:54,394 p=102964 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 21:56:54,406 p=102964 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:56:54,415 p=102964 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 21:56:54,426 p=102964 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:56:54,442 p=102964 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 21:56:54,454 p=102964 u=root n=ansible | ok: [localhost]
+2024-05-18 21:56:54,462 p=102964 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 21:56:55,456 p=102964 u=root n=ansible | ok: [localhost]
+2024-05-18 21:56:55,464 p=102964 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 21:56:55,475 p=102964 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:56:55,486 p=102964 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 21:56:55,796 p=102964 u=root n=ansible | ok: [localhost]
+2024-05-18 21:56:55,806 p=102964 u=root n=ansible | TASK [setup : Debug Neovim configuration directory] **************************************************************************************************
+2024-05-18 21:56:55,821 p=102964 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim"
+}
+2024-05-18 21:56:55,828 p=102964 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 21:56:56,826 p=102964 u=root n=ansible | ok: [localhost]
+2024-05-18 21:56:56,837 p=102964 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 21:56:56,846 p=102964 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:56:56,858 p=102964 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 21:56:56,877 p=102964 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 21:56:56,917 p=102964 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 21:56:56,918 p=102964 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 21:59:56,516 p=104420 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 21:59:56,524 p=104420 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 21:59:57,555 p=104420 u=root n=ansible | ok: [localhost]
+2024-05-18 21:59:57,580 p=104420 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 21:59:58,671 p=104420 u=root n=ansible | ok: [localhost]
+2024-05-18 21:59:58,680 p=104420 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 21:59:58,690 p=104420 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:59:58,701 p=104420 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 21:59:58,714 p=104420 u=root n=ansible | skipping: [localhost]
+2024-05-18 21:59:58,721 p=104420 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:00:02,395 p=104420 u=root n=ansible | changed: [localhost]
+2024-05-18 22:00:02,404 p=104420 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:00:02,422 p=104420 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:00:02,433 p=104420 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:00:02,446 p=104420 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:00:02,454 p=104420 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:00:02,466 p=104420 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:00:02,482 p=104420 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:00:02,496 p=104420 u=root n=ansible | ok: [localhost]
+2024-05-18 22:00:02,504 p=104420 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:00:03,406 p=104420 u=root n=ansible | ok: [localhost]
+2024-05-18 22:00:03,416 p=104420 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:00:03,431 p=104420 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:00:03,438 p=104420 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:00:03,731 p=104420 u=root n=ansible | ok: [localhost]
+2024-05-18 22:00:03,739 p=104420 u=root n=ansible | TASK [setup : Debug Neovim configuration directory] **************************************************************************************************
+2024-05-18 22:00:03,756 p=104420 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim"
+}
+2024-05-18 22:00:03,766 p=104420 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:00:04,769 p=104420 u=root n=ansible | ok: [localhost]
+2024-05-18 22:00:04,779 p=104420 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:00:04,789 p=104420 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:00:04,802 p=104420 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:00:04,818 p=104420 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:00:04,857 p=104420 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:00:04,858 p=104420 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:02:21,933 p=105824 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:02:21,945 p=105824 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:02:22,922 p=105824 u=root n=ansible | ok: [localhost]
+2024-05-18 22:02:22,947 p=105824 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:02:24,010 p=105824 u=root n=ansible | ok: [localhost]
+2024-05-18 22:02:24,017 p=105824 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:02:24,031 p=105824 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:02:24,041 p=105824 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:02:24,050 p=105824 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:02:24,060 p=105824 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:02:28,053 p=105824 u=root n=ansible | changed: [localhost]
+2024-05-18 22:02:28,063 p=105824 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:02:28,078 p=105824 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:02:28,087 p=105824 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:02:28,100 p=105824 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:02:28,111 p=105824 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:02:28,122 p=105824 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:02:28,140 p=105824 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:02:28,152 p=105824 u=root n=ansible | ok: [localhost]
+2024-05-18 22:02:28,163 p=105824 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:02:29,098 p=105824 u=root n=ansible | ok: [localhost]
+2024-05-18 22:02:29,108 p=105824 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:02:29,122 p=105824 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:02:29,130 p=105824 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:02:29,437 p=105824 u=root n=ansible | ok: [localhost]
+2024-05-18 22:02:29,449 p=105824 u=root n=ansible | TASK [setup : Debug Neovim configuration directory] **************************************************************************************************
+2024-05-18 22:02:29,463 p=105824 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim"
+}
+2024-05-18 22:02:29,471 p=105824 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:02:30,464 p=105824 u=root n=ansible | ok: [localhost]
+2024-05-18 22:02:30,474 p=105824 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:02:30,485 p=105824 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:02:30,497 p=105824 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:02:30,513 p=105824 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:02:30,584 p=105824 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:02:30,584 p=105824 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:04:31,812 p=107239 u=root n=ansible | [WARNING]: While constructing a mapping from /home/vinayak/ansible_config/roles/setup/tasks/neovim.yml, line 3, column 5, found a duplicate dict key
+(msg). Using last defined value only.
+
+2024-05-18 22:04:31,826 p=107239 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:04:31,834 p=107239 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:04:32,850 p=107239 u=root n=ansible | ok: [localhost]
+2024-05-18 22:04:32,874 p=107239 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:04:33,944 p=107239 u=root n=ansible | ok: [localhost]
+2024-05-18 22:04:33,951 p=107239 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:04:33,964 p=107239 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:04:33,976 p=107239 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:04:33,986 p=107239 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:04:33,999 p=107239 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:04:38,198 p=107239 u=root n=ansible | changed: [localhost]
+2024-05-18 22:04:38,208 p=107239 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:04:38,225 p=107239 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:04:38,234 p=107239 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:04:38,246 p=107239 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:04:38,255 p=107239 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:04:38,267 p=107239 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:04:38,284 p=107239 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:04:38,301 p=107239 u=root n=ansible | ok: [localhost]
+2024-05-18 22:04:38,312 p=107239 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:04:38,326 p=107239 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:04:38,334 p=107239 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:04:39,241 p=107239 u=root n=ansible | ok: [localhost]
+2024-05-18 22:04:39,249 p=107239 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:04:39,264 p=107239 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:04:39,274 p=107239 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:04:39,552 p=107239 u=root n=ansible | ok: [localhost]
+2024-05-18 22:04:39,563 p=107239 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:04:40,552 p=107239 u=root n=ansible | ok: [localhost]
+2024-05-18 22:04:40,563 p=107239 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:04:40,576 p=107239 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:04:40,584 p=107239 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:04:40,601 p=107239 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:04:40,638 p=107239 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:04:40,638 p=107239 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:05:51,830 p=108642 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:05:51,837 p=108642 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:05:52,800 p=108642 u=root n=ansible | ok: [localhost]
+2024-05-18 22:05:52,822 p=108642 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:05:53,834 p=108642 u=root n=ansible | ok: [localhost]
+2024-05-18 22:05:53,841 p=108642 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:05:53,854 p=108642 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:05:53,868 p=108642 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:05:53,878 p=108642 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:05:53,888 p=108642 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:05:56,719 p=108642 u=root n=ansible | changed: [localhost]
+2024-05-18 22:05:56,726 p=108642 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:05:56,742 p=108642 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:05:56,754 p=108642 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:05:56,766 p=108642 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:05:56,774 p=108642 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:05:56,788 p=108642 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:05:56,805 p=108642 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:05:56,819 p=108642 u=root n=ansible | ok: [localhost]
+2024-05-18 22:05:56,828 p=108642 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:05:56,840 p=108642 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:05:56,852 p=108642 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:05:57,734 p=108642 u=root n=ansible | ok: [localhost]
+2024-05-18 22:05:57,741 p=108642 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:05:57,754 p=108642 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:05:57,764 p=108642 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:05:58,039 p=108642 u=root n=ansible | ok: [localhost]
+2024-05-18 22:05:58,049 p=108642 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:05:59,075 p=108642 u=root n=ansible | ok: [localhost]
+2024-05-18 22:05:59,086 p=108642 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:05:59,099 p=108642 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:05:59,108 p=108642 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:05:59,126 p=108642 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:05:59,169 p=108642 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:05:59,169 p=108642 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:09:25,989 p=110271 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:09:25,996 p=110271 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:09:26,947 p=110271 u=root n=ansible | ok: [localhost]
+2024-05-18 22:09:26,969 p=110271 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:09:27,943 p=110271 u=root n=ansible | ok: [localhost]
+2024-05-18 22:09:27,954 p=110271 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:09:27,965 p=110271 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:09:27,974 p=110271 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:09:27,986 p=110271 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:09:27,997 p=110271 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:09:31,426 p=110271 u=root n=ansible | changed: [localhost]
+2024-05-18 22:09:31,435 p=110271 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:09:31,447 p=110271 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:09:31,456 p=110271 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:09:31,468 p=110271 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:09:31,475 p=110271 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:09:31,488 p=110271 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:09:31,506 p=110271 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:09:31,527 p=110271 u=root n=ansible | ok: [localhost]
+2024-05-18 22:09:31,544 p=110271 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:09:31,578 p=110271 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:09:31,601 p=110271 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:09:32,525 p=110271 u=root n=ansible | ok: [localhost]
+2024-05-18 22:09:32,533 p=110271 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:09:32,546 p=110271 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:09:32,557 p=110271 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:09:32,824 p=110271 u=root n=ansible | ok: [localhost]
+2024-05-18 22:09:32,833 p=110271 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:09:33,808 p=110271 u=root n=ansible | ok: [localhost]
+2024-05-18 22:09:33,816 p=110271 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:09:33,826 p=110271 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:09:33,835 p=110271 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:09:33,851 p=110271 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:09:33,889 p=110271 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:09:33,889 p=110271 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:14:09,440 p=112022 u=root n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/vinayak/ansible_config/roles/setup/tasks/neovim.yml': line 23, column 9, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- name: Create a directory on root
+    file:
+        ^ here
+
+2024-05-18 22:31:18,835 p=112925 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:31:18,841 p=112925 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:31:19,626 p=112925 u=root n=ansible | ok: [localhost]
+2024-05-18 22:31:19,646 p=112925 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:31:20,522 p=112925 u=root n=ansible | ok: [localhost]
+2024-05-18 22:31:20,529 p=112925 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:31:20,540 p=112925 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:31:20,572 p=112925 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:31:20,581 p=112925 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:31:20,589 p=112925 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:31:23,670 p=112925 u=root n=ansible | changed: [localhost]
+2024-05-18 22:31:23,677 p=112925 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:31:23,690 p=112925 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:31:23,699 p=112925 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:31:23,708 p=112925 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:31:23,716 p=112925 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:31:23,725 p=112925 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:31:23,741 p=112925 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:31:23,752 p=112925 u=root n=ansible | ok: [localhost]
+2024-05-18 22:31:23,759 p=112925 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:31:23,771 p=112925 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:31:23,778 p=112925 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:31:24,536 p=112925 u=root n=ansible | ok: [localhost]
+2024-05-18 22:31:24,543 p=112925 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:31:24,552 p=112925 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:31:24,560 p=112925 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:31:24,795 p=112925 u=root n=ansible | ok: [localhost]
+2024-05-18 22:31:24,803 p=112925 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:31:25,749 p=112925 u=root n=ansible | ok: [localhost]
+2024-05-18 22:31:25,756 p=112925 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:31:25,766 p=112925 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:31:25,774 p=112925 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:31:25,789 p=112925 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:31:25,823 p=112925 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:31:25,823 p=112925 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:32:50,452 p=114440 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:32:50,606 p=114440 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:32:50,613 p=114440 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:32:51,371 p=114440 u=root n=ansible | ok: [localhost]
+2024-05-18 22:32:51,390 p=114440 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:32:52,258 p=114440 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716051683, "cache_updated": false, "changed": false}
+2024-05-18 22:32:52,266 p=114440 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:32:52,276 p=114440 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:32:52,305 p=114440 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:32:52,314 p=114440 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:32:52,326 p=114440 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:33:03,600 p=114440 u=root n=ansible | changed: [localhost] => {"cache_update_time": 1716051783, "cache_updated": true, "changed": true}
+2024-05-18 22:33:03,607 p=114440 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:33:03,620 p=114440 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:33:03,628 p=114440 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:33:03,638 p=114440 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:33:03,645 p=114440 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:33:03,656 p=114440 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:33:03,671 p=114440 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:33:03,682 p=114440 u=root n=ansible | ok: [localhost] => {"ansible_facts": {"neovim_config_dir": "~/.config/nvim", "neovim_config_repo": "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"}, "ansible_included_var_files": ["/home/vinayak/ansible_config/roles/setup/vars/main.yml"], "changed": false}
+2024-05-18 22:33:03,692 p=114440 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:33:03,704 p=114440 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:33:03,711 p=114440 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:33:04,467 p=114440 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716051783, "cache_updated": false, "changed": false}
+2024-05-18 22:33:04,474 p=114440 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:33:04,484 p=114440 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:33:04,492 p=114440 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:33:04,745 p=114440 u=root n=ansible | ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/root/.config/nvim", "size": 4096, "state": "directory", "uid": 0}
+2024-05-18 22:33:04,754 p=114440 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:33:05,685 p=114440 u=root n=ansible | ok: [localhost] => {"after": "0e926e7e9e86a22337e27a366ae5bbc81060095d", "before": "0e926e7e9e86a22337e27a366ae5bbc81060095d", "changed": false, "remote_url_changed": false}
+2024-05-18 22:33:05,693 p=114440 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:33:05,703 p=114440 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:33:05,711 p=114440 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:33:05,724 p=114440 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:33:05,759 p=114440 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:33:05,759 p=114440 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:34:37,238 p=115892 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:34:37,392 p=115892 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:34:37,398 p=115892 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:34:38,163 p=115892 u=root n=ansible | ok: [localhost]
+2024-05-18 22:34:38,213 p=115892 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:34:38,213 p=115892 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-18 22:38:18,549 p=116640 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:38:18,557 p=116640 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:38:19,358 p=116640 u=root n=ansible | ok: [localhost]
+2024-05-18 22:38:19,377 p=116640 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:38:20,364 p=116640 u=root n=ansible | ok: [localhost]
+2024-05-18 22:38:20,396 p=116640 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:38:20,405 p=116640 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:38:20,413 p=116640 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:38:20,425 p=116640 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:38:20,432 p=116640 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:38:23,595 p=116640 u=root n=ansible | changed: [localhost]
+2024-05-18 22:38:23,602 p=116640 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:38:23,615 p=116640 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:38:23,625 p=116640 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:38:23,635 p=116640 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:38:23,642 p=116640 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:38:23,652 p=116640 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:38:23,666 p=116640 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:38:23,679 p=116640 u=root n=ansible | ok: [localhost]
+2024-05-18 22:38:23,687 p=116640 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:38:23,699 p=116640 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:38:23,707 p=116640 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:38:24,524 p=116640 u=root n=ansible | ok: [localhost]
+2024-05-18 22:38:24,532 p=116640 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:38:24,545 p=116640 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:38:24,552 p=116640 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:38:24,798 p=116640 u=root n=ansible | ok: [localhost]
+2024-05-18 22:38:24,806 p=116640 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:38:25,718 p=116640 u=root n=ansible | ok: [localhost]
+2024-05-18 22:38:25,726 p=116640 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:38:25,736 p=116640 u=root n=ansible | skipping: [localhost]
+2024-05-18 22:38:25,746 p=116640 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:38:25,759 p=116640 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:38:25,791 p=116640 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:38:25,791 p=116640 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:38:29,661 p=117913 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:38:29,803 p=117913 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:38:29,810 p=117913 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:38:30,597 p=117913 u=root n=ansible | ok: [localhost]
+2024-05-18 22:38:30,615 p=117913 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:38:31,497 p=117913 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052103, "cache_updated": false, "changed": false}
+2024-05-18 22:38:31,504 p=117913 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:38:31,516 p=117913 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:38:31,549 p=117913 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:38:31,560 p=117913 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:38:31,568 p=117913 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:38:34,546 p=117913 u=root n=ansible | changed: [localhost] => {"cache_update_time": 1716052114, "cache_updated": true, "changed": true}
+2024-05-18 22:38:34,554 p=117913 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:38:34,567 p=117913 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:38:34,576 p=117913 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:38:34,585 p=117913 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:38:34,597 p=117913 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:38:34,607 p=117913 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:38:34,623 p=117913 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:38:34,633 p=117913 u=root n=ansible | ok: [localhost] => {"ansible_facts": {"neovim_config_dir": "~/.config/nvim", "neovim_config_repo": "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"}, "ansible_included_var_files": ["/home/vinayak/ansible_config/roles/setup/vars/main.yml"], "changed": false}
+2024-05-18 22:38:34,640 p=117913 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:38:34,652 p=117913 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: ~/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:38:34,659 p=117913 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:38:35,488 p=117913 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052114, "cache_updated": false, "changed": false}
+2024-05-18 22:38:35,498 p=117913 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:38:35,509 p=117913 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:38:35,517 p=117913 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:38:35,764 p=117913 u=root n=ansible | ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/root/.config/nvim", "size": 4096, "state": "directory", "uid": 0}
+2024-05-18 22:38:35,773 p=117913 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:38:36,721 p=117913 u=root n=ansible | ok: [localhost] => {"after": "0e926e7e9e86a22337e27a366ae5bbc81060095d", "before": "0e926e7e9e86a22337e27a366ae5bbc81060095d", "changed": false, "remote_url_changed": false}
+2024-05-18 22:38:36,731 p=117913 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:38:36,745 p=117913 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:38:36,753 p=117913 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:38:36,770 p=117913 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:38:36,808 p=117913 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:38:36,808 p=117913 u=root n=ansible | localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:41:31,951 p=119689 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:41:32,090 p=119689 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:41:32,096 p=119689 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:41:32,917 p=119689 u=root n=ansible | ok: [localhost]
+2024-05-18 22:41:32,937 p=119689 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:41:33,795 p=119689 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052114, "cache_updated": false, "changed": false}
+2024-05-18 22:41:33,827 p=119689 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:41:33,837 p=119689 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:41:33,844 p=119689 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:41:33,855 p=119689 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:41:33,862 p=119689 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:42:32,681 p=119689 u=root n=ansible |  [ERROR]: User interrupted execution
+
+2024-05-18 22:42:35,180 p=120169 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:42:35,319 p=120169 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:42:35,328 p=120169 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:42:36,140 p=120169 u=root n=ansible | ok: [localhost]
+2024-05-18 22:42:36,162 p=120169 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:42:37,151 p=120169 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052114, "cache_updated": false, "changed": false}
+2024-05-18 22:42:37,158 p=120169 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:42:37,168 p=120169 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:42:37,177 p=120169 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:42:37,187 p=120169 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:42:37,194 p=120169 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:43:23,080 p=120169 u=root n=ansible |  [ERROR]: User interrupted execution
+
+2024-05-18 22:44:46,143 p=120733 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:44:46,280 p=120733 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:44:46,287 p=120733 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:44:47,087 p=120733 u=root n=ansible | ok: [localhost]
+2024-05-18 22:44:47,108 p=120733 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:44:48,006 p=120733 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052114, "cache_updated": false, "changed": false}
+2024-05-18 22:44:48,038 p=120733 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:44:48,048 p=120733 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:44:48,056 p=120733 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:44:48,066 p=120733 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:44:48,073 p=120733 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:44:50,719 p=120733 u=root n=ansible | changed: [localhost] => {"cache_update_time": 1716052490, "cache_updated": true, "changed": true}
+2024-05-18 22:44:50,728 p=120733 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:44:50,741 p=120733 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:44:50,749 p=120733 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:44:50,759 p=120733 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:44:50,766 p=120733 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:44:50,777 p=120733 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:44:50,792 p=120733 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:44:50,804 p=120733 u=root n=ansible | ok: [localhost] => {"ansible_facts": {"neovim_config_dir": "/home/vinayak/.config/nvim", "neovim_config_repo": "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"}, "ansible_included_var_files": ["/home/vinayak/ansible_config/roles/setup/vars/main.yml"], "changed": false}
+2024-05-18 22:44:50,814 p=120733 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:44:50,825 p=120733 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: /home/vinayak/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:44:50,833 p=120733 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:44:51,632 p=120733 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052490, "cache_updated": false, "changed": false}
+2024-05-18 22:44:51,639 p=120733 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:44:51,649 p=120733 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:44:51,656 p=120733 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:44:51,905 p=120733 u=root n=ansible | changed: [localhost] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/home/vinayak/.config/nvim", "size": 4096, "state": "directory", "uid": 0}
+2024-05-18 22:44:51,913 p=120733 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:44:52,185 p=120733 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "cmd": "/usr/bin/git ls-remote https://github.com/itsvinayak/TurboNvimConfig.nvim.git -h refs/heads/HEAD", "msg": "fatal: invalid gitfile format: /home/vinayak/.git", "rc": 128, "stderr": "fatal: invalid gitfile format: /home/vinayak/.git\n", "stderr_lines": ["fatal: invalid gitfile format: /home/vinayak/.git"], "stdout": "", "stdout_lines": []}
+2024-05-18 22:44:52,186 p=120733 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:44:52,186 p=120733 u=root n=ansible | localhost                  : ok=8    changed=2    unreachable=0    failed=1    skipped=5    rescued=0    ignored=0   
+2024-05-18 22:46:34,471 p=122128 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:46:34,609 p=122128 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:46:34,618 p=122128 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:46:35,428 p=122128 u=root n=ansible | ok: [localhost]
+2024-05-18 22:46:35,447 p=122128 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:46:36,336 p=122128 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052490, "cache_updated": false, "changed": false}
+2024-05-18 22:46:36,365 p=122128 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:46:36,374 p=122128 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:46:36,383 p=122128 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:46:36,393 p=122128 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:46:36,400 p=122128 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:47:36,876 p=122128 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Failed to lock apt for exclusive operation: Failed to lock directory /var/lib/apt/lists/: E:Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)"}
+2024-05-18 22:47:36,884 p=122128 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:47:36,884 p=122128 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2024-05-18 22:51:00,244 p=123208 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:51:00,444 p=123208 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:51:00,452 p=123208 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:51:01,496 p=123208 u=root n=ansible | ok: [localhost]
+2024-05-18 22:51:01,520 p=123208 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:51:02,568 p=123208 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052490, "cache_updated": false, "changed": false}
+2024-05-18 22:51:02,580 p=123208 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:51:02,591 p=123208 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:51:02,599 p=123208 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:51:02,612 p=123208 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:51:02,620 p=123208 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:51:08,409 p=123208 u=root n=ansible |  [ERROR]: User interrupted execution
+
+2024-05-18 22:52:04,659 p=123548 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:52:04,823 p=123548 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:52:04,830 p=123548 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:52:05,823 p=123548 u=root n=ansible | ok: [localhost]
+2024-05-18 22:52:05,845 p=123548 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:52:06,904 p=123548 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052490, "cache_updated": false, "changed": false}
+2024-05-18 22:52:06,913 p=123548 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:52:06,929 p=123548 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:52:06,939 p=123548 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:52:06,951 p=123548 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:52:06,962 p=123548 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:52:24,505 p=123548 u=root n=ansible | changed: [localhost] => {"cache_update_time": 1716052943, "cache_updated": true, "changed": true}
+2024-05-18 22:52:24,513 p=123548 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:52:24,542 p=123548 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:52:24,550 p=123548 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:52:24,563 p=123548 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:52:24,571 p=123548 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:52:24,584 p=123548 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:52:24,603 p=123548 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:52:24,615 p=123548 u=root n=ansible | ok: [localhost] => {"ansible_facts": {"neovim_config_dir": "/home/vinayak/.config/nvim", "neovim_config_repo": "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"}, "ansible_included_var_files": ["/home/vinayak/ansible_config/roles/setup/vars/main.yml"], "changed": false}
+2024-05-18 22:52:24,626 p=123548 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:52:24,646 p=123548 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: /home/vinayak/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:52:24,655 p=123548 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:52:25,607 p=123548 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052943, "cache_updated": false, "changed": false}
+2024-05-18 22:52:25,615 p=123548 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:52:25,630 p=123548 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:52:25,639 p=123548 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:52:25,924 p=123548 u=root n=ansible | ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/home/vinayak/.config/nvim", "size": 4096, "state": "directory", "uid": 0}
+2024-05-18 22:52:25,932 p=123548 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:52:26,273 p=123548 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "cmd": "/usr/bin/git ls-remote https://github.com/itsvinayak/TurboNvimConfig.nvim.git -h refs/heads/HEAD", "msg": "fatal: invalid gitfile format: /home/vinayak/.git", "rc": 128, "stderr": "fatal: invalid gitfile format: /home/vinayak/.git\n", "stderr_lines": ["fatal: invalid gitfile format: /home/vinayak/.git"], "stdout": "", "stdout_lines": []}
+2024-05-18 22:52:26,274 p=123548 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:52:26,274 p=123548 u=root n=ansible | localhost                  : ok=8    changed=1    unreachable=0    failed=1    skipped=5    rescued=0    ignored=0   
+2024-05-18 22:53:43,989 p=124931 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:53:44,138 p=124931 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:53:44,148 p=124931 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:53:44,950 p=124931 u=root n=ansible | ok: [localhost]
+2024-05-18 22:53:44,968 p=124931 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:53:45,877 p=124931 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716052943, "cache_updated": false, "changed": false}
+2024-05-18 22:53:45,905 p=124931 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:53:45,919 p=124931 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:53:45,927 p=124931 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:53:45,937 p=124931 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:53:45,945 p=124931 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:53:50,095 p=124931 u=root n=ansible | changed: [localhost] => {"cache_update_time": 1716053029, "cache_updated": true, "changed": true}
+2024-05-18 22:53:50,103 p=124931 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:53:50,119 p=124931 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:53:50,127 p=124931 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:53:50,136 p=124931 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:53:50,146 p=124931 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:53:50,155 p=124931 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:53:50,171 p=124931 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:53:50,186 p=124931 u=root n=ansible | ok: [localhost] => {"ansible_facts": {"neovim_config_dir": "/home/vinayak/.config/nvim", "neovim_config_repo": "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"}, "ansible_included_var_files": ["/home/vinayak/ansible_config/roles/setup/vars/main.yml"], "changed": false}
+2024-05-18 22:53:50,195 p=124931 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:53:50,210 p=124931 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: /home/vinayak/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:53:50,221 p=124931 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:53:51,039 p=124931 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716053029, "cache_updated": false, "changed": false}
+2024-05-18 22:53:51,048 p=124931 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:53:51,057 p=124931 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:53:51,066 p=124931 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:53:51,329 p=124931 u=root n=ansible | ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/home/vinayak/.config/nvim", "size": 4096, "state": "directory", "uid": 0}
+2024-05-18 22:53:51,337 p=124931 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:53:54,128 p=124931 u=root n=ansible | changed: [localhost] => {"after": "0e926e7e9e86a22337e27a366ae5bbc81060095d", "before": null, "changed": true}
+2024-05-18 22:53:54,136 p=124931 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:53:54,148 p=124931 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:53:54,155 p=124931 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:53:54,169 p=124931 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:53:54,201 p=124931 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:53:54,201 p=124931 u=root n=ansible | localhost                  : ok=10   changed=2    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-18 22:57:09,339 p=128845 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:57:09,493 p=128845 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:57:09,502 p=128845 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:57:10,282 p=128845 u=root n=ansible | ok: [localhost]
+2024-05-18 22:57:10,303 p=128845 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:57:11,196 p=128845 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716053029, "cache_updated": false, "changed": false}
+2024-05-18 22:57:11,226 p=128845 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:57:11,238 p=128845 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:57:11,245 p=128845 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:57:11,255 p=128845 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:57:11,262 p=128845 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:57:14,233 p=128845 u=root n=ansible | changed: [localhost] => {"cache_update_time": 1716053233, "cache_updated": true, "changed": true}
+2024-05-18 22:57:14,240 p=128845 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:57:14,253 p=128845 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:57:14,260 p=128845 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:57:14,273 p=128845 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:57:14,281 p=128845 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:57:14,292 p=128845 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:57:14,309 p=128845 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:57:14,319 p=128845 u=root n=ansible | ok: [localhost] => {"ansible_facts": {"neovim_config_dir": "/home/vinayak/.config/nvim", "neovim_config_repo": "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"}, "ansible_included_var_files": ["/home/vinayak/ansible_config/roles/setup/vars/main.yml"], "changed": false}
+2024-05-18 22:57:14,326 p=128845 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:57:14,342 p=128845 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: /home/vinayak/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:57:14,350 p=128845 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:57:15,144 p=128845 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716053233, "cache_updated": false, "changed": false}
+2024-05-18 22:57:15,152 p=128845 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:57:15,162 p=128845 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:57:15,170 p=128845 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:57:15,183 p=128845 u=root n=ansible | fatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'local_user' is undefined. 'local_user' is undefined\n\nThe error appears to be in '/home/vinayak/ansible_config/roles/setup/tasks/neovim.yml': line 17, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Ensure Neovim configuration directory exists\n  ^ here\n"}
+2024-05-18 22:57:15,185 p=128845 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:57:15,185 p=128845 u=root n=ansible | localhost                  : ok=7    changed=1    unreachable=0    failed=1    skipped=5    rescued=0    ignored=0   
+2024-05-18 22:58:31,143 p=130107 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-18 22:58:31,283 p=130107 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-18 22:58:31,292 p=130107 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-18 22:58:32,109 p=130107 u=root n=ansible | ok: [localhost]
+2024-05-18 22:58:32,130 p=130107 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-18 22:58:33,099 p=130107 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716053233, "cache_updated": false, "changed": false}
+2024-05-18 22:58:33,128 p=130107 u=root n=ansible | TASK [pre_task : Install or update Homebrew on macOS] ************************************************************************************************
+2024-05-18 22:58:33,137 p=130107 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:58:33,145 p=130107 u=root n=ansible | TASK [pre_task : Debug message for Homebrew installation] ********************************************************************************************
+2024-05-18 22:58:33,156 p=130107 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:58:33,165 p=130107 u=root n=ansible | TASK [pre_task : Update APT cache on Debian-based systems] *******************************************************************************************
+2024-05-18 22:58:35,506 p=130107 u=root n=ansible | changed: [localhost] => {"cache_update_time": 1716053315, "cache_updated": true, "changed": true}
+2024-05-18 22:58:35,513 p=130107 u=root n=ansible | TASK [pre_task : Debug message for APT cache update] *************************************************************************************************
+2024-05-18 22:58:35,531 p=130107 u=root n=ansible | ok: [localhost] => {
+    "msg": "APT cache updated on Debian"
+}
+2024-05-18 22:58:35,538 p=130107 u=root n=ansible | TASK [pre_task : Update Homebrew on macOS] ***********************************************************************************************************
+2024-05-18 22:58:35,548 p=130107 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:58:35,557 p=130107 u=root n=ansible | TASK [pre_task : Debug message for Homebrew update] **************************************************************************************************
+2024-05-18 22:58:35,566 p=130107 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:58:35,580 p=130107 u=root n=ansible | TASK [setup : include_vars] **************************************************************************************************************************
+2024-05-18 22:58:35,594 p=130107 u=root n=ansible | ok: [localhost] => {"ansible_facts": {"neovim_config_dir": "/home/vinayak/.config/nvim", "neovim_config_repo": "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"}, "ansible_included_var_files": ["/home/vinayak/ansible_config/roles/setup/vars/main.yml"], "changed": false}
+2024-05-18 22:58:35,602 p=130107 u=root n=ansible | TASK [setup : checking Var require in scripts] *******************************************************************************************************
+2024-05-18 22:58:35,616 p=130107 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim configuration directory: /home/vinayak/.config/nvim , Neovim config url: https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
+}
+2024-05-18 22:58:35,626 p=130107 u=root n=ansible | TASK [setup : Install Neovim on Debian-based systems] ************************************************************************************************
+2024-05-18 22:58:36,401 p=130107 u=root n=ansible | ok: [localhost] => {"cache_update_time": 1716053315, "cache_updated": false, "changed": false}
+2024-05-18 22:58:36,408 p=130107 u=root n=ansible | TASK [setup : Install Neovim on macOS] ***************************************************************************************************************
+2024-05-18 22:58:36,417 p=130107 u=root n=ansible | skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+2024-05-18 22:58:36,426 p=130107 u=root n=ansible | TASK [setup : Ensure Neovim configuration directory exists] ******************************************************************************************
+2024-05-18 22:58:36,665 p=130107 u=root n=ansible | changed: [localhost] => {"changed": true, "gid": 1000, "group": "vinayak", "mode": "0755", "owner": "vinayak", "path": "/home/vinayak/.config/nvim", "size": 4096, "state": "directory", "uid": 1000}
+2024-05-18 22:58:36,673 p=130107 u=root n=ansible | TASK [setup : Clone the Neovim config] ***************************************************************************************************************
+2024-05-18 22:58:39,321 p=130107 u=root n=ansible | changed: [localhost] => {"after": "0e926e7e9e86a22337e27a366ae5bbc81060095d", "before": null, "changed": true}
+2024-05-18 22:58:39,329 p=130107 u=root n=ansible | TASK [setup : Debug message for Neovim installation on macOS] ****************************************************************************************
+2024-05-18 22:58:39,339 p=130107 u=root n=ansible | skipping: [localhost] => {}
+2024-05-18 22:58:39,346 p=130107 u=root n=ansible | TASK [setup : Debug message for Neovim installation on Debian-based systems] *************************************************************************
+2024-05-18 22:58:39,365 p=130107 u=root n=ansible | ok: [localhost] => {
+    "msg": "Neovim installed on Debian"
+}
+2024-05-18 22:58:39,398 p=130107 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
+2024-05-18 22:58:39,398 p=130107 u=root n=ansible | localhost                  : ok=10   changed=3    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
