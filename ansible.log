@@ -951,3 +951,10 @@ The offending line appears to be:
 }
 2024-05-18 22:58:39,398 p=130107 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************
 2024-05-18 22:58:39,398 p=130107 u=root n=ansible | localhost                  : ok=10   changed=3    unreachable=0    failed=0    skipped=6    rescued=0    ignored=0   
+2024-05-19 17:08:40,359 p=174996 u=root n=ansible | Using /home/vinayak/ansible_config/ansible.cfg as config file
+2024-05-19 17:08:40,549 p=174996 u=root n=ansible | PLAY [Configure local machine] ***********************************************************************************************************************
+2024-05-19 17:08:40,559 p=174996 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************
+2024-05-19 17:08:41,372 p=174996 u=root n=ansible | ok: [localhost]
+2024-05-19 17:08:41,392 p=174996 u=root n=ansible | TASK [pre_task : Install aptitude on Debian-based systems] *******************************************************************************************
+2024-05-19 17:08:41,999 p=174996 u=root n=ansible |  [ERROR]: User interrupted execution
+
