@@ -1,0 +1,9 @@
+---
+
+- name: install python tools
+  command: python3 -m pip install {{ item }} --break-system-packages 
+  loop:
+    "{{ pip_tools }}"
+  become: yes
+  become_user: "{{ local_user }}"
+

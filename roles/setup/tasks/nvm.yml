@@ -1,0 +1,40 @@
+---
+
+- name: Download NVM install script
+  get_url:
+    url: "{{ nvm_install_script_url }}"
+    dest: "/tmp/install_nvm.sh"
+    mode: 0755
+  become: yes
+  become_user: "{{ local_user }}"
+
+- name: Ensure NVM directory exists
+  file:
+    path: "{{ setup_dir }}/.nvm"
+    state: directory
+    owner: "{{ local_user }}"
+    group: "{{ local_user }}"
+    mode: 0755
+  become: yes
+  become_user: "{{ local_user }}"
+
+- name: Run NVM install script
+  shell: "bash /tmp/install_nvm.sh"
+  args:
+    creates: "{{ setup_dir }}/.nvm"  # Ensures idempotence
+  become: yes
+  become_user: "{{ local_user }}"
+
+- name: print NVM version to confirm installation and check if NVM is working
+  shell: |
+    {{ nvm_source_command }}
+    nvm -v
+  become: yes
+  become_user: "{{ local_user }}"
+
+- name: Install Node.js using NVM
+  shell: |
+    {{ nvm_source_command }}
+    nvm install {{ node_version }}
+  become: yes
+  become_user: "{{ local_user }}"

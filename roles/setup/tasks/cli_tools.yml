@@ -1,0 +1,19 @@
+- name: install all command line tool on Debian-based systems
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    "{{ cli_tools }}"
+  when: ansible_os_family == "Debian"
+
+- name: install all command line tool on macOS
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+  loop:
+    "{{ cli_tools }}"
+  when: ansible_os_family == "Darwin"
+
+
+
+

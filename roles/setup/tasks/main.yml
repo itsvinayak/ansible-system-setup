@@ -5,3 +5,4 @@
   - import_tasks: pip_tools.yml
   - import_tasks: neovim.yml
   - import_tasks: nvm.yml
+  - import_tasks: npm_tools.yml

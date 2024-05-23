@@ -1,0 +1,8 @@
+---
+
+- name: Install npm packages
+  npm:
+    name: "{{ item }}"
+    global: yes
+  loop:
+    - "{{ npm_tools }}"

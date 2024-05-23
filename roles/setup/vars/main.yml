@@ -23,6 +23,11 @@ pip_tools:
   - thefuck
   - pyright
   - pylint
+npm_tools:
+  - typescript-language-server
+  - pm2
+  - jshint
+  - eslint
 nvm_install_script_url: "https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh"
 nvm_source_command: |
   export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
