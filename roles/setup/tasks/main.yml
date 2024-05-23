@@ -1,5 +1,7 @@
 - include_vars: vars/main.yml
 
 - block:
+  - import_tasks: cli_tools.yml
+  - import_tasks: pip_tools.yml
   - import_tasks: neovim.yml
-
+  - import_tasks: nvm.yml
