@@ -1,3 +1,5 @@
+- include_vars: vars/main.yml
+
 -  block:
     - name: Install aptitude on Debian-based systems
       ansible.builtin.apt:
@@ -35,4 +37,11 @@
       debug:
         msg: "Homebrew updated on {{ ansible_os_family }}"
       when: ansible_os_family == "Darwin"
-
+    - name: Download configuration files from GitHub
+      git:
+        repo: "{{ github_config_repo_url }}"
+        dest: ./config 
+        clone: yes
+        update: yes
+      become: yes
+      become_user: "{{ local_user }}"

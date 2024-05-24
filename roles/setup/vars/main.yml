@@ -1,7 +1,6 @@
 setup_dir: "/home/vinayak"
 neovim_config_repo: "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
 neovim_config_dir: "/home/vinayak/.config/nvim"
-local_user: "vinayak"
 cli_tools:
   - git
   - curl

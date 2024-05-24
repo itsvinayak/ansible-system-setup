@@ -1,0 +1,64 @@
+---
+
+
+# $ sudo add-apt-repository ppa:mmstick76/alacritty
+# $ sudo apt-get update
+# $ sudo apt-get install alacritty
+- name: Adding Alacritty PPA
+  ansible.builtin.apt_repository:
+    repo: ppa:mmstick76/alacritty
+    state: present
+  become: yes
+  become_user: {{ local_user }}
+  when: ansible_os_family == "Debian"
+
+- name: Updating apt update
+  ansible.builtin.apt:
+    update_cache: yes
+  become: yes
+  become_user: {{ local_user }}
+  when: ansible_os_family == "Debian"
+
+- name: Installing Alacritty on ubuntu
+  ansible.builtin.apt:
+    name: alacritty
+    state: present 
+    update_cache: yes
+  become: yes
+  become_user: {{ local_user }}
+  when: ansible_os_family == "Debian"
+
+- name: Installing Alacritty on macOS
+  community.general.homebrew:
+    name: alacritty
+    state: present
+  become: yes
+  become_user: {{ local_user }}
+  when: ansible_os_family == "Darwin"
+
+
+- name: Create Alacritty configuration file
+  ansible.builtin.shell: mkdir -p ~/.config/alacritty/
+  become: yes
+  become_user: {{ local_user }}
+
+- name: Copy Alacritty configuration file
+  ansible.builtin.shell: cp /usr/share/doc/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+  become: yes
+  become_user: {{ local_user }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

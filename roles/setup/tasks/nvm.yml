@@ -38,3 +38,11 @@
     nvm install {{ node_version }}
   become: yes
   become_user: "{{ local_user }}"
+
+- name: using the installed Node.js version
+  shell: |
+    {{ nvm_source_command }}
+    nvm use {{ node_version }}
+  become: yes
+  become_user: "{{ local_user }}"
+

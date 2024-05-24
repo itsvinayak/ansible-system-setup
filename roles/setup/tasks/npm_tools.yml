@@ -1,8 +1,27 @@
 ---
+# - name: Source NVM script
+#   shell: |
+#     {{ nvm_source_command }}
+#     nvm use {{ node_version }}
+#     nvm alias default {{ node_version }}
+#   args:
+#     executable: /bin/bash
+#   become_user: "{{ local_user }}"
+#
+# - name: Install npm packages
+#   npm:
+#     name: "{{ item }}"
+#     global: yes
+#   loop:
+#     - "{{ npm_tools }}"
+#   become_user: "{{ local_user }}"
 
-- name: Install npm packages
-  npm:
-    name: "{{ item }}"
-    global: yes
-  loop:
-    - "{{ npm_tools }}"
+- name: Install npm packages globally using NVM
+  shell: |
+    {{ nvm_source_command }}
+    nvm use {{ node_version }}
+    npm install -g {{ item }}
+  args:
+    executable: /bin/bash
+  loop: "{{ npm_tools }}"
+  become_user: "{{ local_user }}"
