@@ -1,64 +1,46 @@
 ---
+- block:
+    - name: Ensure Cargo is installed
+      ansible.builtin.package:
+        name: cargo
+        state: present
+        update_cache: yes
 
+    - name: Install Alacritty using Cargo
+      ansible.builtin.command:
+        cmd: cargo install alacritty --locked
+        creates: /home/{{ local_user }}/.cargo/bin/alacritty
+      become_user: "{{ local_user }}"
 
-# $ sudo add-apt-repository ppa:mmstick76/alacritty
-# $ sudo apt-get update
-# $ sudo apt-get install alacritty
-- name: Adding Alacritty PPA
-  ansible.builtin.apt_repository:
-    repo: ppa:mmstick76/alacritty
-    state: present
-  become: yes
-  become_user: {{ local_user }}
-  when: ansible_os_family == "Debian"
+    - name: Check if Alacritty is installed
+      ansible.builtin.command:
+        cmd: alacritty --version
+      register: alacritty_version
+      failed_when: alacritty_version.rc != 0
+      changed_when: false
+      ignore_errors: true
 
-- name: Updating apt update
-  ansible.builtin.apt:
-    update_cache: yes
-  become: yes
-  become_user: {{ local_user }}
-  when: ansible_os_family == "Debian"
+    - name: Check if Alacritty configuration file exists
+      ansible.builtin.stat:
+        path: /home/{{ local_user }}/.config/alacritty/alacritty.yml
+      register: alacritty_config
+      become: yes
+      become_user: "{{ local_user }}"
 
-- name: Installing Alacritty on ubuntu
-  ansible.builtin.apt:
-    name: alacritty
-    state: present 
-    update_cache: yes
-  become: yes
-  become_user: {{ local_user }}
-  when: ansible_os_family == "Debian"
+    - name: Create Alacritty configuration directory
+      ansible.builtin.file:
+        path: /home/{{ local_user }}/.config/alacritty
+        state: directory
+        mode: "0755"
+      become: yes
+      become_user: "{{ local_user }}"
+      when: alacritty_config.stat.exists == false
 
-- name: Installing Alacritty on macOS
-  community.general.homebrew:
-    name: alacritty
-    state: present
-  become: yes
-  become_user: {{ local_user }}
-  when: ansible_os_family == "Darwin"
-
-
-- name: Create Alacritty configuration file
-  ansible.builtin.shell: mkdir -p ~/.config/alacritty/
-  become: yes
-  become_user: {{ local_user }}
-
-- name: Copy Alacritty configuration file
-  ansible.builtin.shell: cp /usr/share/doc/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-  become: yes
-  become_user: {{ local_user }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    - name: Copy Alacritty configuration file
+      ansible.builtin.copy:
+        src: ../../../config/alacritty/alacritty.yml
+        dest: /home/{{ local_user }}/.config/alacritty/alacritty.yml
+        mode: "0644"
+      become: yes
+      become_user: "{{ local_user }}"
+      when: ansible_os_family in ["Debian", "Darwin"]
