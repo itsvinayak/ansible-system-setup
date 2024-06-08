@@ -1,43 +1,47 @@
-- name: checking Var require in scripts
-  ansible.builtin.debug:
-    msg: "Neovim configuration directory: {{ neovim_config_dir }} , Neovim config url: {{ neovim_config_repo }}"
-  
-- name: Install Neovim on Debian-based systems
-  ansible.builtin.apt:
-    name: neovim
-    state: present
-  when: ansible_os_family == "Debian"
+---
+- block:
+    - name: checking Var require in scripts
+      ansible.builtin.debug:
+        msg: "Neovim configuration directory: {{ neovim_config_dir }} , Neovim config url: {{ neovim_config_repo }}"
 
-- name: Install Neovim on macOS
-  community.general.homebrew:
-    name: neovim
-    state: present
-  when: ansible_os_family == "Darwin"
+    - name: Install Neovim on Debian-based systems
+      ansible.builtin.apt:
+        name: neovim
+        state: present
+      when: ansible_os_family == "Debian"
 
-- name: Ensure Neovim configuration directory exists
-  ansible.builtin.file:
-    path: "{{ neovim_config_dir }}"
-    owner: "{{ local_user }}"
-    group: "{{ local_user }}"
-    state: directory
+    - name: Install Neovim on macOS
+      community.general.homebrew:
+        name: neovim
+        state: present
+      when: ansible_os_family == "Darwin"
 
-- name: Clone the Neovim config
-  ansible.builtin.git:
-    repo: "{{ neovim_config_repo }}"
-    dest: "{{ neovim_config_dir }}"
-    accept_hostkey: yes
-    clone: yes
-    update: yes
-    force: yes
-  become_user: "{{ local_user }}"
+    - name: Ensure Neovim configuration directory exists
+      ansible.builtin.file:
+        path: "{{ neovim_config_dir }}"
+        owner: "{{ local_user }}"
+        group: "{{ local_user }}"
+        state: directory
 
+    - name: Clone the Neovim config
+      ansible.builtin.git:
+        repo: "{{ neovim_config_repo }}"
+        dest: "{{ neovim_config_dir }}"
+        accept_hostkey: yes
+        clone: yes
+        update: yes
+        force: yes
+      become_user: "{{ local_user }}"
 
-- name: Debug message for Neovim installation on macOS
-  ansible.builtin.debug:
-    msg: "Neovim installed on {{ ansible_os_family }}"
-  when: ansible_os_family == "Darwin"
+    - name: Debug message for Neovim installation on macOS
+      ansible.builtin.debug:
+        msg: "Neovim installed on {{ ansible_os_family }}"
+      when: ansible_os_family == "Darwin"
 
-- name: Debug message for Neovim installation on Debian-based systems
-  ansible.builtin.debug:
-    msg: "Neovim installed on {{ ansible_os_family }}"
-  when: ansible_os_family == "Debian"
+    - name: Debug message for Neovim installation on Debian-based systems
+      ansible.builtin.debug:
+        msg: "Neovim installed on {{ ansible_os_family }}"
+      when: ansible_os_family == "Debian"
+
+  vars:
+    neovim_config_dir: "{{ config_dir }}/nvim"

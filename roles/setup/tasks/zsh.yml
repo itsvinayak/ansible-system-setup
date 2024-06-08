@@ -1,0 +1,63 @@
+---
+- block:
+    # installing zsh for ubuntu and macos
+    - name: Install zsh on Debian-based systems
+      apt:
+        name: zsh
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install zsh on macOS
+      homebrew:
+        name: zsh
+        state: present
+      when: ansible_os_family == "Darwin"
+
+    # setting zsh as the default shell
+    - name: Set zsh as the default shell
+      command: chsh -s /bin/zsh
+
+    # installing oh-my-zsh
+    - name: Clone Oh My Zsh repository and install
+      git:
+        repo: "{{ oh_my_zsh_repo }}"
+        dest: "{{ zsh_config_dir }}/.oh-my-zsh"
+        update: yes
+      become: yes
+      become_user: "{{ local_user }}"
+      when: oh_my_zsh_repo is defined
+
+    - name: Clone the zsh configuration
+      cp:
+        src: "{{ zsh_config_path }}"
+        dest: "{{ zsh_config_dir }}"
+        force: yes
+
+    # installing zsh plugins
+    - name: Install zsh plugins for Oh My Zsh
+      git:
+        repo: "{{ item.repo }}"
+        dest: "{{ zsh_config_dir }}/.oh-my-zsh/custom/plugins/{{ item.name }}"
+        update: yes
+      become: yes
+      become_user: "{{ local_user }}"
+      with_items: "{{ zsh_plugins }}"
+      when: oh_my_zsh_repo is defined
+
+  vars:
+    oh_my_zsh_repo: https://github.com/ohmyzsh/ohmyzsh.git
+    zsh_config_dir: "{{ config_dir }}/zsh"
+    zsh_config_path: "./config/zsh"
+    zsh_plugins:
+      - name: zsh-autosuggestions
+        repo: https://github.com/zsh-users/zsh-autosuggestions.git
+      - name: zsh-syntax-highlighting
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+      - name: zsh-completions
+        repo: https://github.com/zsh-users/zsh-completions.git
+      - name: zsh-history-substring-search
+        repo: https://github.com/zsh-users/zsh-history-substring-search.git
+      - name: zsh-navigation-tools
+        repo: https://github.com/psprint/zsh-navigation-tools.git
+      - name: zsh-you-should-use
+        repo: https://github.com/MichaelAquilina/zsh-you-should-use.git

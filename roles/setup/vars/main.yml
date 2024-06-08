@@ -1,6 +1,4 @@
-setup_dir: "/home/vinayak"
 neovim_config_repo: "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
-neovim_config_dir: "/home/vinayak/.config/nvim"
 cli_tools:
   - git
   - curl
@@ -27,8 +25,3 @@ npm_tools:
   - pm2
   - jshint
   - eslint
-nvm_install_script_url: "https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh"
-nvm_source_command: |
-  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-node_version: 22

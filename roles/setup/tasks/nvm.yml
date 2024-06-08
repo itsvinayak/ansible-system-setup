@@ -1,48 +1,55 @@
 ---
+-block:
+    - name: Download NVM install script
+      get_url:
+        url: "{{ nvm_install_script_url }}"
+        dest: "/tmp/install_nvm.sh"
+        mode: 0755
+      become: yes
+      become_user: "{{ local_user }}"
 
-- name: Download NVM install script
-  get_url:
-    url: "{{ nvm_install_script_url }}"
-    dest: "/tmp/install_nvm.sh"
-    mode: 0755
-  become: yes
-  become_user: "{{ local_user }}"
+    - name: Ensure NVM directory exists
+      file:
+        path: "{{ setup_dir }}/.nvm"
+        state: directory
+        owner: "{{ local_user }}"
+        group: "{{ local_user }}"
+        mode: 0755
+      become: yes
+      become_user: "{{ local_user }}"
 
-- name: Ensure NVM directory exists
-  file:
-    path: "{{ setup_dir }}/.nvm"
-    state: directory
-    owner: "{{ local_user }}"
-    group: "{{ local_user }}"
-    mode: 0755
-  become: yes
-  become_user: "{{ local_user }}"
+    - name: Run NVM install script
+      shell: "bash /tmp/install_nvm.sh"
+      args:
+        creates: "{{ setup_dir }}/.nvm" # Ensures idempotence
+      become: yes
+      become_user: "{{ local_user }}"
 
-- name: Run NVM install script
-  shell: "bash /tmp/install_nvm.sh"
-  args:
-    creates: "{{ setup_dir }}/.nvm"  # Ensures idempotence
-  become: yes
-  become_user: "{{ local_user }}"
+    - name: print NVM version to confirm installation and check if NVM is working
+      shell: |
+        {{ nvm_source_command }}
+        nvm -v
+      become: yes
+      become_user: "{{ local_user }}"
 
-- name: print NVM version to confirm installation and check if NVM is working
-  shell: |
-    {{ nvm_source_command }}
-    nvm -v
-  become: yes
-  become_user: "{{ local_user }}"
+    - name: Install Node.js using NVM
+      shell: |
+        {{ nvm_source_command }}
+        nvm install {{ node_version }}
+      become: yes
+      become_user: "{{ local_user }}"
 
-- name: Install Node.js using NVM
-  shell: |
-    {{ nvm_source_command }}
-    nvm install {{ node_version }}
-  become: yes
-  become_user: "{{ local_user }}"
+    - name: using the installed Node.js version
+      shell: |
+        {{ nvm_source_command }}
+        nvm use {{ node_version }}
+      become: yes
+      become_user: "{{ local_user }}"
 
-- name: using the installed Node.js version
-  shell: |
-    {{ nvm_source_command }}
-    nvm use {{ node_version }}
-  become: yes
-  become_user: "{{ local_user }}"
+  vars:
+    nvm_install_script_url: "https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh"
+    nvm_source_command: |
+          export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    node_version: 22
 

@@ -1,13 +1,15 @@
 - name: Configure local machine
-  hosts: all 
+  hosts: all
   become: yes
   gather_facts: yes
   connection: local
 
   vars:
     local_user: vinayak
+    temp_config_dir: "~/temp/dotfiles"
+    setup_dir: "/home/vinayak"
+    config_dir: "/home/vinayak/.config"
 
-  roles:
-    - pre_task
-    - setup
-  
+    roles:
+      - pre_task
+      - setup
