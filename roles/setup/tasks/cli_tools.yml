@@ -1,19 +1,33 @@
-- name: install all command line tool on Debian-based systems
-  ansible.builtin.apt:
-    name: "{{ item }}"
-    state: present
-  loop:
-    "{{ cli_tools }}"
-  when: ansible_os_family == "Debian"
+---
+- block:
+    - name: install all command line tool on Debian-based systems
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ cli_tools }}"
+      when: ansible_os_family == "Debian"
 
-- name: install all command line tool on macOS
-  community.general.homebrew:
-    name: "{{ item }}"
-    state: present
-  loop:
-    "{{ cli_tools }}"
-  when: ansible_os_family == "Darwin"
-
-
-
-
+    - name: install all command line tool on macOS
+      community.general.homebrew:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ cli_tools }}"
+      when: ansible_os_family == "Darwin"
+  vars:
+    cli_tools:
+      - git
+      - curl
+      - wget
+      - btop
+      - tree
+      - jq
+      - fzf
+      - ripgrep
+      - fd-find
+      - bat
+      - lsd
+      - python3-dev
+      - python3-pip
+      - python3-setuptools
+      - python3-venv
+      - python3-full

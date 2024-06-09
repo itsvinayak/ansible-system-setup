@@ -44,4 +44,5 @@
       when: ansible_os_family == "Debian"
 
   vars:
+    neovim_config_repo: "https://github.com/itsvinayak/TurboNvimConfig.nvim.git"
     neovim_config_dir: "{{ config_dir }}/nvim"

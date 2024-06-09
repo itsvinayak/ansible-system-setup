@@ -21,23 +21,31 @@
     - name: Clone Oh My Zsh repository and install
       git:
         repo: "{{ oh_my_zsh_repo }}"
-        dest: "{{ zsh_config_dir }}/.oh-my-zsh"
+        dest: "{{ config_dir }}/zsh/.oh-my-zsh"
         update: yes
       become: yes
       become_user: "{{ local_user }}"
       when: oh_my_zsh_repo is defined
 
     - name: Clone the zsh configuration
-      cp:
-        src: "{{ zsh_config_path }}"
-        dest: "{{ zsh_config_dir }}"
+      ansible.builtin.copy:
+        src: "{{ temp_config_dir }}/zsh"
+        dest: "{{ config_dir }}"
+        recurse: yes
         force: yes
+
+    - name: change the owner of the zsh configuration directory
+      ansible.builtin.file:
+        path: "{{ config_dir }}/zsh"
+        owner: "{{ local_user }}"
+        group: "{{ local_user }}"
+        recurse: yes
 
     # installing zsh plugins
     - name: Install zsh plugins for Oh My Zsh
       git:
         repo: "{{ item.repo }}"
-        dest: "{{ zsh_config_dir }}/.oh-my-zsh/custom/plugins/{{ item.name }}"
+        dest: "{{ config_dir }}/.zsh/.oh-my-zsh/custom/plugins/{{ item.name }}"
         update: yes
       become: yes
       become_user: "{{ local_user }}"
@@ -46,8 +54,6 @@
 
   vars:
     oh_my_zsh_repo: https://github.com/ohmyzsh/ohmyzsh.git
-    zsh_config_dir: "{{ config_dir }}/zsh"
-    zsh_config_path: "./config/zsh"
     zsh_plugins:
       - name: zsh-autosuggestions
         repo: https://github.com/zsh-users/zsh-autosuggestions.git

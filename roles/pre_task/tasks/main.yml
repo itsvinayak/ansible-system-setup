@@ -37,10 +37,22 @@
       debug:
         msg: "Homebrew updated on {{ ansible_os_family }}"
       when: ansible_os_family == "Darwin"
+    - name: Debug message for setting configuration directory
+      debug:
+        msg: "Setting configuration directory to {{ temp_config_dir }}"
+
+    - name: Create temporary configuration directory if not present
+      ansible.builtin.file:
+        path: "{{ temp_config_dir }}"
+        state: directory
+        mode: 0755
+      become: yes
+      become_user: "{{ local_user }}"
+
     - name: Download configuration files from GitHub
       git:
         repo: "{{ github_config_repo_url }}"
-        dest: "{{ config_dir }}"
+        dest: "{{ temp_config_dir }}"
         clone: yes
         update: yes
       become: yes

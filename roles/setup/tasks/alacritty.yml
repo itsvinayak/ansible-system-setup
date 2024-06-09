@@ -39,23 +39,22 @@
 
     - name: Check if Alacritty configuration file exists
       ansible.builtin.stat:
-        path: "{{ alacritty_config_file }}"
-      register: alacritty_config
+        path: "{{ alacritty_config }}"
+      register: alacritty_config_exists_result
       become: yes
       become_user: "{{ local_user }}"
 
-    - name: Create Alacritty configuration file
-      ansible.builtin.shell: mkdir -p "{{ alacritty_config }}"
-      become: yes
-      become_user: "{{ local_user }}"
-      when: alacritty_config.stat.exists == false
+    - name: Debug Alacritty configuration file
+      ansible.builtin.debug:
+        msg: "{{ alacritty_config_exists_result }} : coping alacritty configuration file from {{ temp_config_dir }}/alacritty to {{ config_dir }}"
+      when: alacritty_config_exists_result.stat.exists == False
 
     - name: Copy Alacritty configuration file
-      ansible.builtin.shell: cp "{{ temp_config_path }}/alacritty.toml" "{{alacritty_config_file}}"
+      ansible.builtin.shell: cp -r "{{ temp_config_dir }}/alacritty" "{{ config_dir }}"
       become: yes
       become_user: "{{ local_user }}"
+      when: alacritty_config_exists_result.stat.exists == False
 
   vars:
     alacritty_ppa: "deb http://ppa.launchpad.net/mmstick76/alacritty/ubuntu focal main"
-    alacritty_config_file: "~/.config/alacritty/alacritty.toml"
     alacritty_config: "~/.config/alacritty"
