@@ -11,5 +11,5 @@
     config_dir: "/home/vinayak/.config"
 
   roles:
-    # - pre_task
+    - pre_task
     - setup
