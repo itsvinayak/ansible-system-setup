@@ -23,7 +23,7 @@
         repo: "{{ oh_my_zsh_repo }}"
         dest: "{{ config_dir }}/zsh/.oh-my-zsh"
         update: yes
-      become: yes
+      become: true
       become_user: "{{ local_user }}"
       when: oh_my_zsh_repo is defined
 
@@ -47,7 +47,7 @@
         repo: "{{ item.repo }}"
         dest: "{{ config_dir }}/.zsh/.oh-my-zsh/custom/plugins/{{ item.name }}"
         update: yes
-      become: yes
+      become: true
       become_user: "{{ local_user }}"
       with_items: "{{ zsh_plugins }}"
       when: oh_my_zsh_repo is defined

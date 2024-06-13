@@ -1,26 +1,31 @@
 - include_vars: vars/main.yml
 
 - block:
-    - name: Install aptitude on Debian-based systems
-      ansible.builtin.apt:
-        name: aptitude
-        state: present
-      when: ansible_os_family == "Debian"
-
-    - name: Install or update Homebrew on macOS
+    - name: Ensure Homebrew is installed on macOS
       community.general.homebrew:
-        name: update_homebrew
         state: present
       when: ansible_os_family == "Darwin"
+      become: true
+      become_user: "{{ local_user }}"
+      
+    - name: Update Homebrew on macOS
+      community.general.homebrew:
+        update_homebrew: true
+        upgrade_all: true
+      when: ansible_os_family == "Darwin"
+      become: true
+      become_user: "{{ local_user }}"
 
     - name: Debug message for Homebrew installation
       debug:
         msg: "Homebrew installed on {{ ansible_os_family }}"
       when: ansible_os_family == "Darwin"
+      become: true
+      become_user: "{{ local_user }}"
 
     - name: Update APT cache on Debian-based systems
       ansible.builtin.apt:
-        update_cache: yes
+        update_cache: true
       when: ansible_os_family == "Debian"
 
     - name: Debug message for APT cache update
@@ -30,13 +35,16 @@
 
     - name: Update Homebrew on macOS
       community.general.homebrew:
-        update_homebrew: yes
+        update_homebrew: true
       when: ansible_os_family == "Darwin"
+      become: true
+      become_user: "{{ local_user }}"
 
     - name: Debug message for Homebrew update
       debug:
         msg: "Homebrew updated on {{ ansible_os_family }}"
       when: ansible_os_family == "Darwin"
+      
     - name: Debug message for setting configuration directory
       debug:
         msg: "Setting configuration directory to {{ temp_config_dir }}"
@@ -46,8 +54,6 @@
         path: "{{ temp_config_dir }}"
         state: directory
         mode: 0755
-      become: yes
-      become_user: "{{ local_user }}"
 
     - name: Download configuration files from GitHub
       git:
@@ -55,5 +61,5 @@
         dest: "{{ temp_config_dir }}"
         clone: yes
         update: yes
-      become: yes
+      become: true
       become_user: "{{ local_user }}"

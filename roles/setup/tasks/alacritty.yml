@@ -11,23 +11,23 @@
 
     - name: Updating apt update
       ansible.builtin.apt:
-        update_cache: yes
-      become: yes
+        update_cache: true
+      become: true
       when: ansible_os_family == "Debian" and add_alacritty_ppa_result is succeeded
 
     - name: Installing Alacritty on ubuntu
       ansible.builtin.apt:
         name: alacritty
         state: present
-        update_cache: yes
-      become: yes
+        update_cache: true
+      become: true
       when: ansible_os_family == "Debian" and add_alacritty_ppa_result is succeeded
 
     - name: Installing Alacritty on macOS
       community.general.homebrew:
         name: alacritty
         state: present
-      become: yes
+      become: true
       when: ansible_os_family == "Darwin"
 
     - name: Check if Alacritty is installed
@@ -41,7 +41,7 @@
       ansible.builtin.stat:
         path: "{{ alacritty_config }}"
       register: alacritty_config_exists_result
-      become: yes
+      become: true
       become_user: "{{ local_user }}"
 
     - name: Debug Alacritty configuration file
@@ -51,7 +51,7 @@
 
     - name: Copy Alacritty configuration file
       ansible.builtin.shell: cp -r "{{ temp_config_dir }}/alacritty" "{{ config_dir }}"
-      become: yes
+      become: true
       become_user: "{{ local_user }}"
       when: alacritty_config_exists_result.stat.exists == False
 

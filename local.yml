@@ -1,11 +1,11 @@
 - name: Configure local machine
   hosts: all
-  become: yes
+  become: true
   gather_facts: yes
   connection: local
 
   vars:
-    local_user: vinayak
+    local_user: itsvinayak
     temp_config_dir: "/home/vinayak/temp/dotfiles"
     setup_dir: "/home/vinayak"
     config_dir: "/home/vinayak/.config"
