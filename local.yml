@@ -5,7 +5,7 @@
   connection: local
 
   vars:
-    local_user: itsvinayak
+    local_user: vinayak
     temp_config_dir: "/home/vinayak/temp/dotfiles"
     setup_dir: "/home/vinayak"
     config_dir: "/home/vinayak/.config"

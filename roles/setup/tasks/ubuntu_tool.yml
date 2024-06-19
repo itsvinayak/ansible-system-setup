@@ -1,0 +1,8 @@
+---
+- block:
+    - name: Install ubtuntu tool
+      apt:
+        name: { { item.name } }
+        state: present
+      with_items:
+        - name: vlc

@@ -1,13 +1,6 @@
 - include_vars: vars/main.yml
 
 - block:
-    - name: Ensure Homebrew is installed on macOS
-      community.general.homebrew:
-        state: present
-      when: ansible_os_family == "Darwin"
-      become: true
-      become_user: "{{ local_user }}"
-      
     - name: Update Homebrew on macOS
       community.general.homebrew:
         update_homebrew: true
@@ -44,7 +37,7 @@
       debug:
         msg: "Homebrew updated on {{ ansible_os_family }}"
       when: ansible_os_family == "Darwin"
-      
+
     - name: Debug message for setting configuration directory
       debug:
         msg: "Setting configuration directory to {{ temp_config_dir }}"
